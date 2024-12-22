@@ -8,10 +8,9 @@ import { Contact } from '../contact.model';
 import { ContactsService } from '../contacts.service';
 
 @Component({
-  selector: 'app-contact-form-dialog',
-  standalone: true,
-  imports: [ReactiveFormsModule, MatDialogTitle, MatDialogContent, MatDialogActions, MatButtonModule, MatDialogClose, MatInputModule, MatFormFieldModule],
-  templateUrl: './contact-form-dialog.component.html',
+    selector: 'app-contact-form-dialog',
+    imports: [ReactiveFormsModule, MatDialogTitle, MatDialogContent, MatDialogActions, MatButtonModule, MatDialogClose, MatInputModule, MatFormFieldModule],
+    templateUrl: './contact-form-dialog.component.html'
 })
 export class ContactFormDialogComponent {
   dialogRef = inject(MatDialogRef<ContactFormDialogComponent>);

@@ -8,11 +8,10 @@ import { ContactFormDialogComponent } from './contact-form-dialog/contact-form-d
 import {MatIconModule} from '@angular/material/icon';
 
 @Component({
-  selector: 'app-contacts',
-  standalone: true,
-  imports: [MatTableModule, MatButtonModule, MatDialogModule, MatIconModule],
-  templateUrl: './contacts.component.html',
-  styles: ``
+    selector: 'app-contacts',
+    imports: [MatTableModule, MatButtonModule, MatDialogModule, MatIconModule],
+    templateUrl: './contacts.component.html',
+    styles: ``
 })
 export class ContactsComponent {
   dialog = inject(MatDialog);
