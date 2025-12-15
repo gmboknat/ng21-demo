@@ -6,10 +6,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { Contact } from '../contact.model';
 import { ContactsService } from '../contacts.service';
+import {MatTelInput} from 'mat-tel-input'
 
 @Component({
     selector: 'app-contact-form-dialog',
-    imports: [ReactiveFormsModule, MatDialogTitle, MatDialogContent, MatDialogActions, MatButtonModule, MatDialogClose, MatInputModule, MatFormFieldModule],
+    imports: [ReactiveFormsModule, MatDialogTitle, MatDialogContent, MatDialogActions, MatButtonModule, MatDialogClose, MatInputModule, MatFormFieldModule, MatTelInput],
     templateUrl: './contact-form-dialog.component.html'
 })
 export class ContactFormDialogComponent {

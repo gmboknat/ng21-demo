@@ -6,10 +6,11 @@ import { Contact } from './contact.model';
 import { ContactsService } from './contacts.service';
 import { ContactFormDialogComponent } from './contact-form-dialog/contact-form-dialog.component';
 import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
     selector: 'app-contacts',
-    imports: [MatTableModule, MatButtonModule, MatDialogModule, MatIconModule],
+    imports: [MatTableModule, MatButtonModule, MatDialogModule, MatIconModule, MatCardModule],
     templateUrl: './contacts.component.html',
     styles: ``
 })
