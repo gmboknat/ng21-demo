@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MAT_DIALOG_DATA, MatDialogActions, MatDialogClose, MatDialogContent, MatDialogRef, MatDialogTitle } from '@angular/material/dialog';
@@ -36,7 +36,7 @@ export class ContactFormDialogComponent {
   onSave() {
     const contact: Contact = this.form.getRawValue()
     const id = this.data?.contact?._id
-    let request = id ? this.contactService.update(id, contact) : this.contactService.add(contact);
+    const request = id ? this.contactService.update(id, contact) : this.contactService.add(contact);
     request.subscribe(() => {
       this.dialogRef.close()
     })

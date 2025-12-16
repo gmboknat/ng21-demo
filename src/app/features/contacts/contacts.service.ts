@@ -38,7 +38,7 @@ export class ContactsService {
 
   delete(id: string) {
     return this.http.delete<Contact>(`${environment.api}/contacts/${id}`)
-      .pipe(tap(res => {
+      .pipe(tap(() => {
         this.list.update(contacts => {
           return contacts.filter(contact => contact._id !== id)
         })

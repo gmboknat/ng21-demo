@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
@@ -14,7 +14,7 @@ import {MatCardModule} from '@angular/material/card';
     templateUrl: './contacts.component.html',
     styles: ``
 })
-export class ContactsComponent {
+export class ContactsComponent implements OnInit {
   dialog = inject(MatDialog);
   contactsService = inject(ContactsService)
   displayedColumns: string[] = ['name', 'phone', 'email', 'actions'];
