@@ -1,7 +1,7 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { Contact } from './contact.model';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
+import { environment } from '@env/environment';
 import { tap } from 'rxjs';
 
 @Injectable({
