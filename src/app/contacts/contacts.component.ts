@@ -3,10 +3,10 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { Contact } from './contact.model';
-import { ContactsService } from './contacts.service';
 import { ContactFormDialogComponent } from './contact-form-dialog/contact-form-dialog.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
+import { ContactsStore } from './contacts.store';
 
 @Component({
     selector: 'app-contacts',
@@ -16,11 +16,11 @@ import {MatCardModule} from '@angular/material/card';
 })
 export class ContactsComponent implements OnInit {
   dialog = inject(MatDialog);
-  contactsService = inject(ContactsService)
+  contactsStore = inject(ContactsStore);
   displayedColumns: string[] = ['name', 'phone', 'email', 'actions'];
   
   ngOnInit(): void {
-    this.contactsService.getAll().subscribe()
+    this.contactsStore.getAll()
   }
 
   onCreateForm() {
@@ -39,7 +39,7 @@ export class ContactsComponent implements OnInit {
   }
 
   onDelete(id: string) {
-    this.contactsService.delete(id).subscribe()
+    this.contactsStore.delete(id)
   }
 }
 

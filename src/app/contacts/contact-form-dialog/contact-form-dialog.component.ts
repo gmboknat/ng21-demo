@@ -5,8 +5,8 @@ import { MAT_DIALOG_DATA, MatDialogActions, MatDialogClose, MatDialogContent, Ma
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { Contact } from '../contact.model';
-import { ContactsService } from '../contacts.service';
 import {MatTelInput} from 'mat-tel-input'
+import { ContactsStore } from '../contacts.store';
 
 @Component({
     selector: 'app-contact-form-dialog',
@@ -17,13 +17,13 @@ export class ContactFormDialogComponent {
   dialogRef = inject(MatDialogRef<ContactFormDialogComponent>);
   data = inject(MAT_DIALOG_DATA);
   formBuilder = inject(NonNullableFormBuilder)
+  contactsStore = inject(ContactsStore)
 
   form = this.formBuilder.group({
     name: ['', [Validators.required]],
     phone: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]]
   })
-  private contactService = inject(ContactsService)
 
   constructor() {
     if (this.data?.contact) {
@@ -36,7 +36,7 @@ export class ContactFormDialogComponent {
   onSave() {
     const contact: Contact = this.form.getRawValue()
     const id = this.data?.contact?._id
-    const request = id ? this.contactService.update(id, contact) : this.contactService.add(contact);
+    const request = id ? this.contactsStore.update(id, contact) : this.contactsStore.add(contact);
     request.subscribe(() => {
       this.dialogRef.close()
     })

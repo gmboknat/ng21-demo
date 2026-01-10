@@ -19,6 +19,6 @@
   </mat-dialog-content>
   <mat-dialog-actions align="end">
     <button matButton mat-dialog-close>Cancel</button>
-    <button matButton="filled" type="submit" [disabled]="form.invalid">Save</button>
+    <button matButton="filled" type="submit" [disabled]="form.invalid || contactsStore.isLoading()">Save</button>
   </mat-dialog-actions>
 </form>
