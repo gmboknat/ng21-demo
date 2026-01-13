@@ -10,7 +10,7 @@
     ]
   },
   "projects": {
-    "ng18-demo": {
+    "ng21-demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -47,7 +47,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/ng18-demo",
+            "outputPath": "dist/ng21-demo",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -95,10 +95,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ng18-demo:build:production"
+              "buildTarget": "ng21-demo:build:production"
             },
             "development": {
-              "buildTarget": "ng18-demo:build:development"
+              "buildTarget": "ng21-demo:build:development"
             }
           },
           "defaultConfiguration": "development"
